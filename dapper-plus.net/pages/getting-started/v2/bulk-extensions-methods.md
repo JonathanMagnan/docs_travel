@@ -1,6 +1,6 @@
 ---
-Title: The Quickest Way to Save Data - Mastering Bulk Extension Methods
-MetaDescription: The Quickest Way to Save Data - Mastering Bulk Extension Methods
+Title: The Quickest Way to Save Data: Mastering Bulk Extension Methods
+MetaDescription: The Quickest Way to Save Data: Mastering Bulk Extension Methods
 LastMod: 2024-06-27
 ---
 
