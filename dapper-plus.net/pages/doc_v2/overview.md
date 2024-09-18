@@ -1,7 +1,7 @@
 ---
 Title: What is Dapper Plus? Join Thousands of Companies Boosting Performance Worldwide
 MetaDescription: Learn what Dapper Plus is, who uses this library, why you need this library, how it helps you to develop faster, and how Dapper Plus helps Dapper.
-LastMod: 2024-09-06
+LastMod: 2024-09-17
 ---
 
 # What is Dapper Plus? Join Thousands of Companies Boosting Performance Worldwide
@@ -43,11 +43,11 @@ Yup, the code speaks for itself!
 
 Click on this [Online Example](https://dotnetfiddle.net/OxvKDQ) link and see this code in action.
 
-You will see through our getting started and documentation, that we offer links so you can directly try the code live on [.NET Fiddle](https://dotnetfiddle.net/). You can also browse all our examples and those created by the community in our [Online Examples](/online-examples) section.
+You will see through our documentation, that we offer links so you can directly try the code live on [.NET Fiddle](https://dotnetfiddle.net/). You can also browse all our examples and those created by the community in our [Online Examples](/online-examples) section.
 
 ## Who Uses This Library? Anyone and Everyone!
 
-Me, you, banks, governments, schools, etc.! Over the years, all our libraries including [Entity Framework Extensions](https://entityframework-extensions.net/) and [C# Eval Expression](https://eval-expression.net/) have reached more than **5000 happy paid customers** in all types of industries, including many in the Fortune 100. I mean, we even have two well-known space agencies that use our library. So when our library is used even for space programs, we are literally everywhere!
+Me, maybe you, banks, governments, university, etc.! Over the years, all our libraries including [Entity Framework Extensions](https://entityframework-extensions.net/) and [C# Eval Expression](https://eval-expression.net/) have reached more than **5000 happy paid customers** in all types of industries, including many in the Fortune 100. I mean, we even have two well-known space agencies that use our library. So when our library is used even for space programs, we are literally everywhere!
 
 Our offer is simple: **providing the best performance and flexibility**.
 
@@ -64,7 +64,7 @@ We said earlier that Dapper Plus was faster than the traditional way of insertin
 
 **You don't believe our numbers?** Why don't you try it yourself by running this [Online Benchmark](https://dotnetfiddle.net/kz4UpX)? You simply have to open the link, click on the "Run" button, and let the numbers speak for themselves!
 
-This means that Dapper Plus for inserting 2,000 rows is around **75x faster, reducing time by 99%**. WOW!"
+This means that Dapper Plus for inserting 2,000 rows is around **75x faster, reducing time by 99%**. WOW!
 
 Some developers will argue that you can use alternative techniques to insert faster than the traditional ways in Dapper (obviously, since we use those techniques!), but **remember:** One of the major advantages of the Dapper Plus library is making your life easier.
 
@@ -87,7 +87,7 @@ So, letting Dapper Plus write those saving SQL statements for you comes with som
 - **Increased Accuracy:** The code is already well tested, reducing the chance of human error.
 - **Increased Scalability:** The code is coded to be optimized, increasing your application's responsiveness for your clients.
 
-There are multiple other advantages. But, in short, your code is faster and **YOU** code faster, allowing yourself to focus more on strategic tasks that require your expertise and less about writing those boring SQL statements.
+There are multiple other advantages. But, in short, your code is faster and **YOU** code faster, allowing yourself to focus more on strategic tasks that require **your expertise** and less about writing those boring SQL statements.
 
 While performance is always the main goal for Dapper Plus, providing you with flexibility is another. You will learn that Dapper Plus gives you access to [hundreds of options](#options) enhancing even more those advantages that we just saw. Even when you looked at our first example, you understood in a blink of an eye what was the purpose of this option `InsertIfNotExists = true`.
 
@@ -108,8 +108,8 @@ So, purchasing Dapper Plus directly benefits and helps Dapper as well. You can l
 
 ## Conclusion
 
-As the first article in our Getting Started section, we've only just begun to explore the potential of Dapper Plus. We now understand more about how Dapper Plus relates to Dapper and how both libraries mutually benefit each other.
+In this overview, we've only just begun to explore the potential of Dapper Plus. We now understand more about how Dapper Plus relates to Dapper and how both libraries mutually benefit each other.
 
 We have seen a very basic scenario and observed that our library is so user-friendly that you can [download it](/download) and start using it right away.
 
-It's now time to continue getting started by exploring all our [Bulk Extensions Methods](#bulk-extensions-methods) and then all our **FREE** [Single Extensions Methods](/single-extensions-methods) to better understand how to utilize Dapper Plus effectively.
+It's now time to continue by learning the basic of Dapper Plus with our [Getting Started](getting-started) article.
