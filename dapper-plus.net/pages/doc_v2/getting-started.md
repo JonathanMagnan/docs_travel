@@ -6,96 +6,142 @@ LastMod: 2024-09-17
 
 # Getting Started with Dapper Plus
 
-Ready to try Dapper Plus for the first time?
+So you are ready to try Dapper Plus for the first time?
 
-After taking around 10 minutes of your time to read and try this getting started tutorial, you will already be confortable using our library in your day to day basis.
+Under 10 minutes, I promise that you already will be confortable using our library in your day to day basis.
 
-You will learn how in one line you can reduce your saving times by up **99%**, how to have access to [hundred of options](/options), and how to map your entities to save it the way **you want**.
+You will learn:
+- How easily you can use the [BulkInsert](/bulk-insert) method to reduce your saving times by up **99%**
+- How to [map](/mapping) your entities to save it the way **you want**
+- How to have access to [hundred of options](/options)
 
 Enough talk, let get started!
 
 ## Download Dapper Plus
 
-The first step is obviously adding Dapper Plus to your project.
+The first step is obviously adding the Dapper Plus NuGet package to your project.
 
-Go to our [download](/download) page and add the NuGet library to your project.
+You can find it by either go on our [download](/download) page or by using directly this NuGet link: [https://www.nuget.org/packages/Z.Dapper.Plus](https://www.nuget.org/packages/Z.Dapper.Plus)
 
-As you now know, Dapper Plus contains some free but also some paid features but don't worry, you can fully try all features of our library for free. Every month, a new [trial](/trial) is available, that expires at the end of the month. So using the latest version allow you to test our library without having to purchase it.
+Even if you didn't have purchased the library yet, you can fully try all our features for free. Every month, a new [trial](/trial) is available, that expires at the end of the month. So using the latest version allow you to test our library without having to purchase it.
 
 Don't forget also to leave us a feedback to enter in our [contest to win a free license](https://dapper-plus.net/contest)
 
 ## Using Directive
 
-Now that the library has been added to your project, the second step is adding the `using Z.Dapper.Plus;` header directive to have access to all our extension methods. Exactly the same way you normally do with Dapper and the `using Dapper;` header directive:
+The second step now that the library has been added to your project is adding the `using Z.Dapper.Plus;` header directive to your file, so you can have access to all our extension methods.
 
 ```csharp
 using Dapper
 using Z.Dapper.Plus
 ```
 
-So far, so good we did really nothing special but your project should look like this [online example](#).
+So far, so good we did exactly the same as you normally do when using [Dapper](https://www.learndapper.com/) (Adding the NuGet package and the header directive), so nothing should be suprising.
 
+## My First BulkInsert / SingleInsert
 
-## My First SingleInsert / BulkInsert
+For our getting started example, we will assume that we have to save a list of order and their corresponding order items.
 
-Now that we are done with the basic, let use a common scenario about inserting an order and all related order items.
+First, let insert our entities with our [BulkInsert](/bulk-insert) method:
 
-To insert the order, we will use the  [SingleInsert](/single-extensions-methods#single-insert) extension method and to insert the order items, we will use the [BulkInsert](/bulk-insert) extension method.
+```csharp
+```
+
+[Online Examples](#)
+
+Nothing special in our example beside that we have to propagate the `OrderID` identity values to the order items. See the following article if you want to know more about [propagating the identity value](/identity-key-propagation)
+
+Let now make our code even simpler by using what we call [chaining methods](/bulk-extensions-methods#chaining-methods), this is the same principe of what we usally do through LINQ:
+
+```csharp
+```
+
+[Online Examples](#)
+
+The code is now simpler to write and simpler to read making it easier to maintains. On this example, we used the `ThenForEach` method to propagate the identity value this time.
+
+For people that want to use Dapper Plus for FREE, you can achieve the same result by using [SingleInsert](/single-extensions-methods) extension method:
 
 ```csharp
 
 ```
 
-To make it even simpler, you can copy & paste the whole code directly to your project from our [online example](#)
-
-Note that it can be done even easier using [chaining methods](/#todo), but let stick to the basic in this getting started article.
+[Online Examples](#)
 
 ## Mapping and Mapping Key
 
-So far so good, but what if I want to insert only a few properties and not all entity properties?
+So far so good, but what if you only want to insert a few number of properties?
 
-You can easily specify the [Mapping](/mapping) of your entity type to save it the way you want such as:
+This is now time to introduce the [Mapping](/mapping) to save your entity type the way **you want**. In our example, we will mixe a lot of mapping logic to show as much as we can:
+
+For the Order:
+- We will map only a few properties
+- We will map a constant value
+- We will map a value from a client-side evaluation
+- We will map a value from a database side evaluation
+
+For the OrderItem:
+- We will map the `OrderID` directly from the parent
+- We will ignore a few properties
+- We will call the `AutoMap` to complete the mapping
+
+```alert-note
+**AutoMap**: Once you start to map, we cannot automatically use the automapping logic anymore unless you call explicitely the `AutoMap` method as we have shown for tyhe OrderItem.
+```
+
+Here is the full example:
 
 ```csharp
 TODO
 ```
 
-Dapper Plus doesn't limit you to only one mapping, you can map your entity time an unlimited amount of time by using a [Mapping Key](/mapping-key) and specify it when you want to save your entity
+[Online Example](#)
+
+However something remain weird in this example, as you probably don't want this mapping to be your default behavior whenever you call the [BulkInsert](/bulk-insert)!
+
+Dapper Plus allow you to map your entity time an unlimited amount of time by using a [Mapping Key](/mapping-key) and specify it whenever you want to save your entity.
 
 ```csharp
 TODO
 ```
+
+[Online Example](#)
+
+Another technique would have to use a new instance of the [DapperPlusContext](dapper-plus-context).
  
-## Propagating the Identity Value
-
-We have seen in our last example that we manually had to propagate the `OrderID` identity value to the order items.
-
-This logic can be done automatically by using the [Identity Propagation](/identity-key-propagation) mapping.
-
-```csharp
-
-```
-
-[options](/options)
-
-
 ## My First Options
 
+It's finally time to see how we can use some of the [hundreds of options](/options) available in Dapper Plus.
 
+To use options, you need to use the `UseBulkOptions` method from the connection or the mapping depending of the scenario.
+
+By example, let say I would like to log all query executed from Dapper Plus, doing it from the connection would make more sense:
+
+```csharp
+```
+
+[Online Example](#)
+
+While using the `UseBulkOptions` such as options that are more related to the mapping such as use the `UseTableLock`, or etc...
+
+```csharp
+```
+
+[Online Example](#)
 
 ## Data Source
 
-It's now time to complicate a little bit the thing, let assume that our order and order items was imported from a CSV and loaded in a DataTable.
+We have seen that Dapper Plus is flexible by allowing to provide a lot of options but also for supporting multiple kind of [Data Source](/data-source).
 
-How to exactly handle this?
+In this example, we will assume that the data was imported from a CSV and loaded in a DataTable.
 
-- [Data Source](/data-source)
+```csharp
+```
 
 ## Conclusion
 
-Did you success to go through all this getting started?
+In this getting started tutorial, we have seen almost all the most common usage of the Dapper Plus library.
 
+As I intiialy promised, by now you should already be confortable using our library in your day to day basis.
 
-And this conclude our little getting started article.
-
-It's now time to continue getting started by exploring all our [Bulk Extensions Methods](#bulk-extensions-methods) and then all our **FREE** [Single Extensions Methods](/single-extensions-methods) to better understand how to utilize Dapper Plus effectively.
+If you want to already master Dapper Plus better understand how to utilize it effectively, then you can continue by exploring all our [Bulk Extensions Methods](#bulk-extensions-methods) and then all our **FREE** [Single Extensions Methods](/single-extensions-methods).
